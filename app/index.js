@@ -1,12 +1,11 @@
 import React from 'react'
-import { reander } from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import todoApp from './reducers/todoApp'
-import App from './component/App'
+import calendarApp from './reducers'
+import App from './components/App'
 
-const store = createStore(todoApp, window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(calendarApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const wrappedApp = (
   <Provider store={store}>
@@ -14,4 +13,4 @@ const wrappedApp = (
   </Provider>
 )
 
-render (wrappedApp, document.getElementById('app'))
+render(wrappedApp, document.getElementById('app'))
